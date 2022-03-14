@@ -8,11 +8,16 @@
 <title>Play time</title>
 </head>
 <body>
-	<h1>Let's play the hang man game</h1>
+	<h1>Guess like your life depends on it</h1>
 	<p> ${censoredWord} </p>
-	<p> You have ${5 - wrongGuessNumber } tries left!</p>
 	
-	<form method="post" action="/game">
+	<p> The word contains ${lettersNumber} letters in total.
+	
+	<p> You have ${6 - wrongGuessNumber } tries left!</p>
+		
+	 <pre> ${picture} </pre>
+	
+	<form method="post" action="/game/${gameId}">
 		<table>
 			<tr>
 				<td>Enter your guessed letter</td>

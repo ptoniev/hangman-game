@@ -7,6 +7,11 @@
 <title>Loser</title>
 </head>
 <body>
-You have lost the game and you will hang!
+<p> You have lost the game and virtual death is upon you!</p>
+	 <pre> ${picture} </pre>
+	 <br>
+<form method="post" action="/game">
+  <button type="submit" >Start a new game</button> </form>
+  
 </body>
 </html>

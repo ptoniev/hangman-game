@@ -4,14 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome to the Hangman Game</title>
+<title>Hangman Game</title>
 </head>
 <body>
-<p>Welcome to the Hangman Game!</p>
-
- <ul>
-		<li><a href="/game">Start a new game</a></li>
-
-  	</ul>
+<h1>Welcome to the Hangman Game!</h1>
+  	
+<form method="post" action="/game">
+  <button type="submit" >Start a new game</button> </form>
+  	
 </body>
 </html>
