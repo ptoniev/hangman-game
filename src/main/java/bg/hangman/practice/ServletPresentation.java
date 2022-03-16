@@ -12,27 +12,24 @@ import jakarta.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/game/*")
-public class GamePage extends HttpServlet {
+public class ServletPresentation extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
-    GameService gameService = factory.getBean(GameService.class);
     request.getServletContext().getRequestDispatcher("/gamePage.jsp").forward(request, response);
-
   }
 
 
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
-    GameService gameService = factory.getBean(GameService.class);
+    HangmanGameService hangmanGameService = factory.getBean(HangmanGameService.class);
     boolean isNoPathParam = request.getPathInfo() == null || request.getPathInfo().equals("/");
     if (isNoPathParam) {
-      gameService.startNewGame(request, response, getServletContext());
+      hangmanGameService.startNewGame(request, response);
     } else {
-      gameService.makeTry(request, response);
+      hangmanGameService.makeTry(request, response);
     }
   }
 
