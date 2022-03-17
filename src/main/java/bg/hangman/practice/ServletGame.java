@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/game/*")
-public class ServletPresentation extends HttpServlet {
+public class ServletGame extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
